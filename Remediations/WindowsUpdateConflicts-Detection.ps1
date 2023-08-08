@@ -17,19 +17,19 @@ foreach ($key in $keys)
     try
     {
         $value = Get-ItemProperty -Path $key.RegistryPath -ErrorAction Stop
-        Write-Host ('[{0}]: Registry Key exists. Checking for individual values' -f $key.RegistryPath)
+        Write-Host ('[{0}]: Registry Key exists. Checking for individual values.' -f $key.RegistryPath)
 
         foreach ($entry in $key.Entries)
         {
             if (-not [string]::IsNullOrWhiteSpace($value.$entry))
             {
-                Write-Host ('[{0}]: Found conflicting value [{1}]' -f $key.RegistryPath, $entry)
+                Write-Host ('[{0}]: Found conflicting value [{1}].' -f $key.RegistryPath, $entry)
                 exit 1
             }
         }
     }
     catch
     {
-        Write-Host ('[{0}]: Registry Key does not exist. No action needed' -f $key.RegistryPath)
+        Write-Host ('[{0}]: Registry Key does not exist. No action needed.' -f $key.RegistryPath)
     }
 }
