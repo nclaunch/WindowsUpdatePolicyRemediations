@@ -1,12 +1,12 @@
 ﻿$keys = @()
  
-#Windows Update - AutoUpdate
+# Windows Update - AutoUpdate
 $keys += New-Object -TypeName psobject -Property @{
     RegistryPath = 'Registry::HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WindowsUpdate\AU'
     Entries = @('UseUpdateClassPolicySource','UseWUServer','AUOptions','AllowAutoUpdate','NoAutoUpdate')
 }
 
-#Windows Update
+# Windows Update
 $keys += New-Object -TypeName psobject -Property @{
     RegistryPath = 'Registry::HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WindowsUpdate'
     Entries = @('DeferFeatureUpdates','DeferFeatureUpdatesPeriodInDays','PauseFeatureUpdatesStartTime','DeferQualityUpdates','DeferQualityUpdatesPeriodInDays','PauseQualityUpdatesStartTime','ScheduledInstallDay','ScheduledInstallTime','ExcludeWUDriversInQualityUpdate','BranchReadinessLevel','DoNotConnectToWindowsUpdateInternetLocations','DisableWindowsUpdateAccess','SetPolicyDrivenUpdateSourceForDriverUpdates','SetPolicyDrivenUpdateSourceForQualityUpdates','SetPolicyDrivenUpdateSourceForFeatureUpdates','WUServer')
