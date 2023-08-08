@@ -21,7 +21,6 @@ foreach ($key in $keys)
 
         foreach ($entry in $key.Entries)
         {
-
             if (-not [string]::IsNullOrWhiteSpace($value.$entry))
             {
                 Write-Host ('[{0}]: Found conflicting value [{1}]' -f $key.RegistryPath, $entry)
